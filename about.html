@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Social Media</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta name="generator" content="SensationThemes">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/webflow.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="images/logo32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/logo.png" rel="apple-touch-icon">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="js/myApp.js"></script>
+	
+<style>
+.container {
+    position: relative;
+    width: 50%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%)
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #c5241c;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
+</style>
+
+	
+</head>
+
+<body>
+    <section class="mobile-wrapper">
+        <div class="w-embed"></div>
+        <div class="page-content" id="main-stack">
+            <div class="navbar w-nav" data-animation="default" data-collapse="all" data-duration="700">
+                <div class="w-container">
+                    <nav class="bg-gradient nav-menu w-nav-menu" role="navigation">
+                        <a class="btn-close-button nav-menu-link w-clearfix w-inline-block" href="home.html">
+                            <div class="icon-list-menu">
+                                <div class="icon ion-android-close"></div>
+                            </div>
+                                                					<div class="nav-menu-titles">Close Menu</div>
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="home.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-home-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Home Page</div>
+						</a>
+						<!--<a class="nav-menu-link w-clearfix w-inline-block" data-load="1" href="features.html">
+                            <div class="icon-list-menu">
+                                <div class="icon ion-ios-box-outline"></div>
+                            </div>
+                            <div class="nav-menu-titles">Features</div>
+                            <div class="nav-menu-text-right">6</div>
+                        </a>-->
+						<a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="profile.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-calendar-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Profile</div>
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="search.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-location-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Advanced Serach</div>
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="chat.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-social-facebook-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Messages</div>
+							<div class="nav-menu-text-right">3</div>
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="about.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-gear-outline"></div>
+							</div>
+							<div class="nav-menu-titles">About Us</div>
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							href="stat.html">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-gear-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Charts</div>
+						
+					
+						</a> <a class="nav-menu-link w-clearfix w-inline-block" data-load="1"
+							onclick="logout();">
+							<div class="icon-list-menu">
+								<div class="icon ion-ios-gear-outline"></div>
+							</div>
+							<div class="nav-menu-titles">Log Out</div>
+						</a>
+    
+                        <!--<a class="last nav-menu-link w-clearfix w-inline-block" data-load="1" href="terms.html"><div class="icon-list-menu"><div class="icon ion-ios-bookmarks-outline"></div></div><div class="nav-menu-titles">Terms and Conditions</div></a>-->
+                        <div class="separator-bottom"></div>
+                        <div class="separator-bottom"></div>
+                        <div class="separator-bottom"></div>
+                    </nav>
+                    <div class="wrapper-mask" data-ix="menu-mask"></div>
+                    <div class="navbar-title">About Us</div>
+                    <div class="navbar-button right w-nav-button" data-ix="hide-navbar-icons" id="menu-button">
+                        <div class="home-icon navbar-button-icon">
+                            <div class="bar-home-icon top"></div>
+                            <div class="bar-home-icon middle"></div>
+                            <div class="bar-home-icon bottom"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body">
+                <div class="item-new news-container">
+                    <div>
+                        <div class="grey-header">
+                      &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img class="profile-avatar-image" src="images/logo.png" width="150">
+                        <br> <br>
+                            <h2 class="grey-heading-title">  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Lost And Found</h2>
+                        </div>
+                        <div class="no-borders text-new">
+                            <div>
+                                <div class="separator-fields"></div>
+                                
+                                <p class="description-new">Lost and Found is a mobile application, dedicated to reuniting lost properties with its rightful owner within the university. You can report about anything that was lost or found; if you have something to declare just fill in the form and spread a word to all application users.</p>
+                                
+                              
+                        </div>
+                    </div>
+                    <div>
+                        <div class="grey-header">
+                            <h2 class="grey-heading-title">Meet The Team</h2>
+                        </div>
+                        <div class="no-borders text-new">
+                            <div>
+                               
+                                
+                                <div>
+                               
+								<div class="container">
+									<img src="images/team1.jpg" alt="Avatar" class="image" style="width:100%">
+								<div class="middle">
+								 Noor El Amal Glenza <br> 
+									<a class="facebook icon-only small-button social-squared w-clearfix w-inline-block" href="mailto:nourelamel.glenza@esprit.tn ">
+                                        <div class="icon-button">
+                                          <div class="icon ion-social-googleplus""></div>
+                                        </div>
+									</a>
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="container">
+									<img src="images/team2.jpg" alt="Avatar" class="image" style="width:100%">
+								<div class="middle">
+								Mohamed Firas Mrabet <br>
+								<a class="facebook icon-only small-button social-squared w-clearfix w-inline-block" href="mailto:medfiras.mrabet@esprit.tn ">
+                                        <div class="icon-button">
+                                            <div class="icon ion-social-googleplus""></div>
+                                        </div>
+									</a>
+								</div>
+									</div>
+								</div>
+                                   
+                                  
+                                   
+                                 
+                        </div>
+                    </div>
+                    <div>
+                       
+                        
+                       
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loading-mask page-content" id="new-stack">
+            <div class="loading-icon">
+                <div class="icon ion-load-d navbar-button-icon"></div>
+            </div>
+        </div>
+    </section>
+    <script src="js/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+              google: {
+                families: ["Montserrat:400,700"]
+              }
+            });
+    </script>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/webflow.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+
+</html>

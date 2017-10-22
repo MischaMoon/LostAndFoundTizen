@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html ng-app="Posts">
+
+
+<head>
+<meta charset="utf-8">
+<title>Add New</title>
+<meta content="width=device-width,initial-scale=1" name="viewport">
+<meta name="generator" content="SensationThemes">
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
+<link href="css/material.css" rel="stylesheet" type="text/css">
+<link href="css/material.min.css" rel="stylesheet" type="text/css">
+<link href="css/webflow.css" rel="stylesheet" type="text/css">
+<link rel='stylesheet prefetch'
+	href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css'>
+<link rel='stylesheet prefetch'
+	href='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.css'>
+<link rel='stylesheet prefetch'
+	href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<link href="images/logo32.png" rel="shortcut icon" type="image/x-icon">
+<link href="images/logo.png" rel="apple-touch-icon">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+<script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+<script>
+	// Initialize Firebase
+	var config = {
+		apiKey : "AIzaSyC17kAzbrTtgAI7ecs4KQ6QJWwNsOjtnjs",
+		authDomain : "lostandfound-a2c13.firebaseapp.com",
+		databaseURL : "https://lostandfound-a2c13.firebaseio.com",
+		projectId : "lostandfound-a2c13",
+		storageBucket : "lostandfound-a2c13.appspot.com",
+		messagingSenderId : "671480781666"
+	};
+	firebase.initializeApp(config);
+	  function openDialog() {
+            $("#file").trigger('click');
+        }
+</script>
+ <style>
+        div.polaroid {
+            background-color: white;
+            widhth: 342px;
+        }
+
+        div.container {
+            text-align: center;
+
+        }
+
+        .upload-button {
+            margin-left: 30%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body ng-controller="addPostController">
+	<section class="mobile-wrapper">
+		<div class="w-embed"></div>
+		<div class="page-content" id="main-stack">
+			<div class="navbar w-nav" data-animation="default"
+				data-collapse="all" data-duration="700">
+				<div class="w-container">
+					<div class="wrapper-mask" data-ix="menu-mask"></div>
+					<div class="navbar-title">Add New</div>
+					<a class="navbar-button w-inline-block" data-load="1" href="home.html">
+                        <div class="icon ion-ios-arrow-thin-left navbar-button-icon"></div>
+                    </a>
+				</div>
+			</div>
+			<div class="body padding">
+				<div class="w-form">
+					<form action="#">
+						
+			
+						<div class="polaroid">
+							<img src="images/unknown-007.jpg" alt="" onclick="openFileChooser()" id="img-id" />
+							
+						<br>
+						<center>
+						<input id="fileInput" type="file" accept="image/*"
+								onchange="PreviewImagee()" value="ddd"
+								 style="width: 60px; height: 50px; display: block; margin-left: auto; margin-right: auto;" />
+							<img onclick="camera()" type="button" src="images/ca.ico" style="width:40px;height:40px;" value="Camera" type="image"/>
+						</center>
+						<div>
+							
+							  <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                                    <select id="type" class="mdl-selectfield__select" name="Type" style="width: 342px;color: #9e9696;">
+                                        <option value="" disabled selected>---Select Type---</option>
+                                        <option value="lost">lost</option>
+								<option value="found">found</option>
+                                    </select>
+                               </div>
+							
+							
+							
+						</div>
+
+
+						<div class="row-input-list">
+							<label class="label-form" for="title">TITLE</label> <input
+								class="in-grey input-form w-input" data-name="title" id="title"
+								maxlength="256" name="title" required="required" type="text">
+							<div class="separator-fields"></div>
+						</div>
+						<div class="background-grey last"></div>
+						<div class="row-input-list">
+							<label class="label-form" for="description-2">DESCRIPTION</label>
+							<input class="in-grey-last input-form w-input"
+								data-name="description" id="description" maxlength="256"
+								name="description" required="required" type="text">
+							<div class="separator-fields"></div>
+						</div>
+						<div class="w-clearfix">
+							<div class="left row-input-list w50">
+								<label class="label-form" for="birthday-field">DATE</label> <input
+									class="input-form w-input" data-name="birthday" id="date"
+									maxlength="256" name="birthday" required="required" type="date">
+								<div class="separator-fields"></div>
+							</div>
+							<div class="row-input-list w50">
+								<label class="label-form" for="birthday-field">TIME</label> <input
+									class="input-form w-input" data-name="birthday" id="time"
+									maxlength="256" name="birthday" required="required" type="time">
+								<div class="separator-fields"></div>
+							</div>
+						</div>
+
+
+						
+							<div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                                    <select id="location" class="mdl-selectfield__select" name="Type" style="width: 342px;color: #9e9696;" id="location">
+                                        <option value="" disabled selected>---Select Location---</option>
+                                        <option value="Bloc A">Bloc A</option>
+										<option value="Bloc B">Bloc B</option>
+										<option value="Bloc C">Bloc C</option>
+										<option value="Bloc D">Bloc D</option>
+										<option value="Bloc E">Bloc E</option>
+										<option value="Bloc H">Bloc H</option>
+										<option value="Others">Others</option>
+                                    </select>
+                               </div>
+						
+						<div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                                    <select id="object" class="mdl-selectfield__select" name="Type" style="width: 342px;color: #9e9696;">
+                                        <option value="" disabled selected>---Select Object---</option>
+                                        <option value="Laptops">Laptops</option>
+								<option value="Chargers">Chargers</option>
+								<option value="Wallets">Wallets</option>
+								<option value="Glasses">Glasses</option>
+								<option value="Bags">Bags</option>
+								<option value="Others">Others</option>
+                                    </select>
+                               </div>
+							
+							
+						</div>
+
+
+
+						
+					</div>
+
+					</form>
+
+					<br> <br> <br> <input class="action-button w-button"
+						data-wait="Please wait..." type="button" ng-click="addPost();"
+						value="Add Post">
+				</div></div>
+			</div>
+		</div>
+		<div class="loading-mask page-content" id="new-stack">
+			<div class="loading-icon">
+				<div class="icon ion-load-d navbar-button-icon"></div>
+			</div>
+		</div>
+	</section>
+	<script src="js/webfont.js"></script>
+	<script type="text/javascript">
+		WebFont.load({
+			google : {
+				families : [ "Montserrat:400,700" ]
+			}
+		});
+	</script>
+	<script src="js/modernizr.js" type="text/javascript"></script>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/webflow.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script
+		src='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'></script>
+	<script
+		src='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js'></script>
+	<script type="text/javascript" src="js/material.js"></script>
+	<script type="text/javascript" src="js/material.min.js"></script>
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/addPost.js"></script>
+	<script>
+									function openFileChooser() {
+										try {
+											var appControl = new tizen.ApplicationControl(
+												"http://tizen.org/appcontrol/operation/pick",
+												null,
+												"image/*",
+												null,
+												null);
+				
+											var appControlReplyCallback = {
+												onsuccess: function(reply) {
+													var path = reply[1].value[0];
+													path = "file://" + path;	
+												        document.getElementById('img-id').setAttribute("src", path);
+												},
+												onfailure: function() {
+													console.log("The launch application control failed");
+												}
+											};
+				
+											tizen.application.launchAppControl(
+												appControl,
+												null,
+												function() {console.log("launch application control succeed");
+												 },
+												function(e) {console.log("launch application control failed. reason: " + e.message); },
+												appControlReplyCallback 
+											);
+									    } catch (e) {
+									        alert("Error " + e.name + " : " + e.message);
+									    }
+									  };
+									  
+									 function PreviewImagee() {
+										 console.log("hi2");
+									        var oFReader = new FileReader();
+									        oFReader.readAsDataURL(document.getElementById("fileInput").files[0]);
+				
+									        oFReader.onload = function (oFREvent) {
+									            document.getElementById("img-id").src = oFREvent.target.result;
+									        };
+									    };
+								</script>
+								<script type="text/javascript">
+									function camera(){
+										
+											var mimeType = "image/jpeg";
+											var appControl = new tizen.ApplicationControl("http://tizen.org/appcontrol/operation/create_content", null, mimeType, null, null);
+											var appControlReplyCallback = {
+											    onsuccess: function(data) {
+											        console.log("success reply");
+											        for(var i=0;i<data.length;i++) {
+											            if(data[i].key === "http://tizen.org/appcontrol/data/selected") {
+											                console.log(data[i].value);
+											                path = data[i].value;
+													        document.getElementById('img-id').setAttribute("src", path);
+													        document.getElementById('fileInput').setAttribute("value", document.getElementById('img-id').getAttribute("src"));
+													        
+													        
+
+													        console.log();
+											            }
+											        }
+											    },
+											    onfailure: function() {
+											        console.log("fail reply");
+											    }
+											};
+											tizen.application.launchAppControl(appControl, "tizen.camera", 
+											    function() {
+											        console.log("launch appControl succeeded");
+											    }, function(e) {
+											        /* Error handling */
+											    }, appControlReplyCallback);
+									}							
+								</script>  
+
+</body>
+
+
+</html>

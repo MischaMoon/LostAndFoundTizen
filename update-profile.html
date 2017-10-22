@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <title>Add New</title>
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta name="generator" content="SensationThemes">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css">
+    <link href="css/webflow.css" rel="stylesheet" type="text/css">
+    <link rel='stylesheet prefetch'
+          href='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css'>
+    <link rel='stylesheet prefetch'
+          href='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.css'>
+    <link rel='stylesheet prefetch'
+          href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+
+
+    <link href="css/material.css" rel="stylesheet" type="text/css">
+    <link href="css/material.min.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href="images/logo32.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/logo.png" rel="apple-touch-icon">
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <script src="https://www.gstatic.com/firebasejs/3.7.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyC17kAzbrTtgAI7ecs4KQ6QJWwNsOjtnjs",
+            authDomain: "lostandfound-a2c13.firebaseapp.com",
+            databaseURL: "https://lostandfound-a2c13.firebaseio.com",
+            projectId: "lostandfound-a2c13",
+            storageBucket: "lostandfound-a2c13.appspot.com",
+            messagingSenderId: "671480781666"
+        };
+        firebase.initializeApp(config);
+
+        function openDialog() {
+            $("#file").trigger('click');
+        }
+    </script>
+    <style>
+        div.polaroid {
+            background-color: white;
+            widhth: 342px;
+        }
+
+        div.container {
+            text-align: center;
+
+        }
+
+        .upload-button {
+            margin-left: 30%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body ng-app="update" ng-controller="updateController">
+    <section class="mobile-wrapper">
+        <div class="w-embed"></div>
+        <div class="page-content" id="main-stack">
+            <div class="navbar w-nav" data-animation="default"
+                 data-collapse="all" data-duration="700">
+                <div class="w-container">
+                    <div class="wrapper-mask" data-ix="menu-mask"></div>
+                    <div class="navbar-title">Update Profile</div>
+                    <a class="navbar-button w-inline-block" data-load="1" href="profile.html">
+                        <div class="icon ion-ios-arrow-thin-left navbar-button-icon"></div>
+                    </a>
+                </div>
+            </div>
+            <div ng-init="profile()">
+                <div>
+                    <form>
+                        <div class="separator-fields"></div>
+
+                        <div class="row-input-list">
+                            <div class="polaroid">
+                                <img ng-src="{{userProfile.profile_picture}}" alt="Norway" style="width:100%">
+                                <div>
+                                    <input class="inputfile inputfile-3" style="display: none" data-name="Name"
+                                           id="file" maxlength="256"
+                                           name="location" required="required" type="file">
+                                    <input class="upload-button w-button" onclick="openDialog()" type="button"
+                                           value="Upload Image">
+                                    <a class="color right-input-icon w-inline-block" href="#">
+                                        <div class="icon ion-camera"></div>
+                                    </a>
+
+
+                                    <div class="separator-fields"></div>
+
+                                    <div class="row-input-list">
+                                        <label class="label-form" for="birthday-field">Name</label>
+                                        <div class="block-input-combined">
+                                            <input class="input-form left w-input"
+                                                   value="{{userProfile.username}}" data-name="Name" id="Name"
+                                                   maxlength="256" name="location" required="required" type="text">
+                                            <a class="color right-input-icon w-inline-block" href="#">
+                                                <div class="icon ion-person"></div>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="row-input-list">
+                                    <label class="label-form" for="birthday-field">Email</label>
+                                    <div class="block-input-combined">
+                                        <input class="input-form left w-input"
+                                               value="{{userProfile.email}}" data-name="Email" id="Email"
+                                               maxlength="256" name="location" required="required" type="text">
+                                        <a class="color right-input-icon w-inline-block" href="#">
+                                            <div class="icon ion-email"></div>
+                                        </a>
+                                    </div>
+                                    <div class="separator-fields"></div>
+                                </div>
+
+                                <div class="row-input-list">
+                                    <label class="label-form" for="birthday-field">Password</label>
+                                    <div class="block-input-combined">
+                                        <input class="input-form left w-input" data-name="Password"
+                                               value="{{userProfile.password}}" id="Password" maxlength="256"
+                                               name="location" required="required" type="text"> <a
+                                            class="color right-input-icon w-inline-block" href="#">
+                                        <div class="icon ion-ios-locked"></div>
+                                    </a>
+                                    </div>
+                                    <div class="separator-fields"></div>
+                                </div>
+                                <div class="row-input-list">
+                                    <label class="label-form" for="birthday-field">Phone</label>
+                                    <div class="block-input-combined">
+                                        <input class="input-form left w-input" data-name="Phone"
+                                               id="Phone" placeholder="{{userProfile.phone}}" maxlength="256"
+                                               name="location" required="required" type="tel"> <a
+                                            class="color right-input-icon w-inline-block" href="#">
+                                        <div class="icon ion-iphone"></div>
+                                    </a>
+                                    </div>
+                                    <div class="separator-fields"></div>
+                                </div>
+
+                                <div class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label">
+                                    <select id="university" class="mdl-selectfield__select" name="Type" style="width: 342px;color: #9e9696;">
+                                        <option value="" disabled selected>---Select university----</option>
+                                        <option value="Esprit">Esprit</option>
+                                        <option value="Esprit">ULT</option>
+                                        <option value="INSAT">INSAT</option>
+                                    </select>
+                                </div>
+
+                                <br><br>
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" aria-valuenow="70"
+                                         aria-valuemin="0" aria-valuemax="100"
+                                         style="width: {{progress}}%;background-color: #F34236;">
+
+                                    </div>
+                                </div>
+
+
+                                <input class="action-button w-button" data-style="flip-open" data-wait="Please wait..."
+                                       type="button" ng-click="setProfile();" value="Edit Profile">
+
+
+                                <div class="separator-button"></div>
+								<br>
+								
+
+
+                            </div>
+                        </div>
+
+                </div>
+
+
+                </form>
+            </div>
+        </div>
+        </div>
+        <div class="loading-mask page-content" id="new-stack">
+            <div class="loading-icon">
+                <div class="icon ion-load-d navbar-button-icon"></div>
+            </div>
+        </div>
+    </section>
+    <script src="js/webfont.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Montserrat:400,700"]
+            }
+        });
+    </script>
+    <script src="js/modernizr.js" type="text/javascript"></script>
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/webflow.js" type="text/javascript"></script>
+    <script
+            src='https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js'></script>
+    <script
+            src='https://cdn.rawgit.com/kybarg/mdl-selectfield/mdl-menu-implementation/mdl-selectfield.min.js'></script>
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/setProfile.js"></script>
+
+</body>
+
+
+</html>
